@@ -1,0 +1,12 @@
+<!-- -*- mode: XML -*- -->
+<!-- run record in a nodelet manager -->
+
+<launch>
+  <node pkg="record_sync" type="record_sync_node" name="record_sync_node" output="screen">
+ <remap from="velodyne_points" to="/kitti/velo/pointcloud"/>
+<remap from="image_raw" to="/kitti/camera_color_right/image_raw"/>
+<remap from="gps/fix" to="/kitti/oxts/gps/fix"/>
+<remap from="imu/data" to="/kitti/oxts/imu"/>
+
+  </node>
+</launch>
